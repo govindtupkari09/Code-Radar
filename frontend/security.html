@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security Dashboard | Code Radar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/security.css">
+
+    <script src="js/security.js" defer></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">⌘</span>
+            <h2>Code<span>Radar</span></h2>
+        </div>
+
+        <div class="menu">
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <a href="index.html" class="menu-item">▦ Dashboard</a>
+
+            <a href="repositories.html" class="menu-item">⌘ Repositories</a>
+
+            <a href="analysis.html" class="menu-item">◈ Code Analysis</a>
+
+            <a href="#" class="menu-item">⚠ Issues</a>
+
+            <a href="security.html" class="menu-item active">♢ Security</a>
+
+            <p class="menu-title">MANAGEMENT</p>
+
+            <a href="#" class="menu-item">♧ Developers</a>
+
+            <a href="#" class="menu-item">⚙ Settings</a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="user-profile">
+
+                <div class="avatar">GT</div>
+
+                <div>
+                    <h4>Developer</h4>
+                    <p>Free Plan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h3>Security Center</h3>
+                <p>Monitor and protect your repositories.</p>
+            </div>
+
+            <div class="top-actions">
+
+                <select id="securityRepo">
+
+                    <option>SmartDocAI</option>
+                    <option>CarbonWise</option>
+                    <option>Movie Booking</option>
+
+                </select>
+
+                <button class="profile-btn">GT</button>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <!-- Header -->
+
+            <div class="security-header">
+
+                <div>
+                    <h1>Security Overview</h1>
+
+                    <p>
+                        Identify vulnerabilities and improve application security.
+                    </p>
+                </div>
+
+                <button class="security-scan-btn" id="securityScan">
+                    🛡 Run Security Scan
+                </button>
+
+            </div>
+
+
+            <!-- Security Score -->
+
+            <div class="security-overview">
+
+                <div class="security-score-card">
+
+                    <p>Overall Security Score</p>
+
+                    <div class="security-circle">
+
+                        <div>
+                            <h2>72</h2>
+                            <span>/100</span>
+                        </div>
+
+                    </div>
+
+                    <span class="security-status">
+                        Needs Improvement
+                    </span>
+
+                    <p class="score-info">
+                        Security issues detected. Review critical vulnerabilities.
+                    </p>
+
+                </div>
+
+
+                <!-- Security Statistics -->
+
+                <div class="security-stats">
+
+                    <div class="security-stat-card">
+
+                        <span class="security-icon red">⚠</span>
+
+                        <p>Critical Vulnerabilities</p>
+
+                        <h2>03</h2>
+
+                        <span class="red-text">Immediate attention required</span>
+
+                    </div>
+
+
+                    <div class="security-stat-card">
+
+                        <span class="security-icon orange">🛡</span>
+
+                        <p>High Risk</p>
+
+                        <h2>05</h2>
+
+                        <span class="orange-text">High priority issues</span>
+
+                    </div>
+
+
+                    <div class="security-stat-card">
+
+                        <span class="security-icon yellow">◈</span>
+
+                        <p>Medium Risk</p>
+
+                        <h2>08</h2>
+
+                        <span class="yellow-text">Review recommended</span>
+
+                    </div>
+
+
+                    <div class="security-stat-card">
+
+                        <span class="security-icon green">✓</span>
+
+                        <p>Resolved Vulnerabilities</p>
+
+                        <h2>14</h2>
+
+                        <span class="green-text">Successfully resolved</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Vulnerability List -->
+
+            <div class="vulnerability-section">
+
+                <div class="security-section-heading">
+
+                    <div>
+                        <h2>Security Vulnerabilities</h2>
+
+                        <p>
+                            Detected security risks in your source code.
+                        </p>
+                    </div>
+
+                    <select id="riskFilter">
+
+                        <option value="all">All Risks</option>
+
+                        <option value="critical">Critical</option>
+
+                        <option value="high">High</option>
+
+                        <option value="medium">Medium</option>
+
+                        <option value="low">Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="vulnerability-list" id="vulnerabilityList">
+
+
+                    <!-- Vulnerability 1 -->
+
+                    <div class="vulnerability-card"
+                         data-risk="critical">
+
+                        <div class="vulnerability-top">
+
+                            <div>
+                                <span class="risk-label critical-risk">
+                                    CRITICAL
+                                </span>
+
+                                <h3>SQL Injection</h3>
+                            </div>
+
+                            <span class="risk-score">9.8 / 10</span>
+
+                        </div>
+
+                        <p>
+                            User input is directly inserted into SQL queries,
+                            potentially allowing unauthorized database access.
+                        </p>
+
+                        <div class="vulnerability-meta">
+
+                            <span>📁 database.py</span>
+
+                            <span>Line 45</span>
+
+                            <span>OWASP A03:2021</span>
+
+                        </div>
+
+                        <button class="security-details-btn"
+                                data-title="SQL Injection"
+                                data-description="Untrusted user input is directly used in SQL queries. Attackers may manipulate database queries to access or modify unauthorized information."
+                                data-solution="Use parameterized queries, prepared statements and proper input validation.">
+
+                            View Security Details →
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Vulnerability 2 -->
+
+                    <div class="vulnerability-card"
+                         data-risk="high">
+
+                        <div class="vulnerability-top">
+
+                            <div>
+                                <span class="risk-label high-risk">
+                                    HIGH
+                                </span>
+
+                                <h3>Hardcoded API Credentials</h3>
+                            </div>
+
+                            <span class="risk-score">8.2 / 10</span>
+
+                        </div>
+
+                        <p>
+                            Sensitive API credentials are stored directly
+                            inside the source code.
+                        </p>
+
+                        <div class="vulnerability-meta">
+
+                            <span>📁 config.py</span>
+
+                            <span>Line 18</span>
+
+                            <span>OWASP A07:2021</span>
+
+                        </div>
+
+                        <button class="security-details-btn"
+                                data-title="Hardcoded API Credentials"
+                                data-description="Sensitive credentials stored in source code may be exposed through repository access or accidental commits."
+                                data-solution="Use environment variables or a dedicated secrets manager. Rotate any credentials that have already been exposed.">
+
+                            View Security Details →
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Vulnerability 3 -->
+
+                    <div class="vulnerability-card"
+                         data-risk="medium">
+
+                        <div class="vulnerability-top">
+
+                            <div>
+                                <span class="risk-label medium-risk">
+                                    MEDIUM
+                                </span>
+
+                                <h3>Missing Input Validation</h3>
+                            </div>
+
+                            <span class="risk-score">5.4 / 10</span>
+
+                        </div>
+
+                        <p>
+                            Application does not properly validate
+                            incoming user data.
+                        </p>
+
+                        <div class="vulnerability-meta">
+
+                            <span>📁 app.py</span>
+
+                            <span>Line 72</span>
+
+                            <span>OWASP A03:2021</span>
+
+                        </div>
+
+                        <button class="security-details-btn"
+                                data-title="Missing Input Validation"
+                                data-description="Unvalidated input may cause unexpected application behavior and can contribute to injection or other security problems."
+                                data-solution="Validate input on the server using strict schemas, expected data types and length constraints.">
+
+                            View Security Details →
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Vulnerability 4 -->
+
+                    <div class="vulnerability-card"
+                         data-risk="low">
+
+                        <div class="vulnerability-top">
+
+                            <div>
+                                <span class="risk-label low-risk">
+                                    LOW
+                                </span>
+
+                                <h3>Information Disclosure</h3>
+                            </div>
+
+                            <span class="risk-score">3.1 / 10</span>
+
+                        </div>
+
+                        <p>
+                            Application error messages reveal unnecessary
+                            technical information.
+                        </p>
+
+                        <div class="vulnerability-meta">
+
+                            <span>📁 errors.py</span>
+
+                            <span>Line 29</span>
+
+                            <span>OWASP A09:2021</span>
+
+                        </div>
+
+                        <button class="security-details-btn"
+                                data-title="Information Disclosure"
+                                data-description="Detailed error messages may reveal internal implementation details and sensitive debugging information."
+                                data-solution="Return generic error messages to users and keep detailed errors in protected server logs.">
+
+                            View Security Details →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div id="noVulnerabilities" class="no-vulnerabilities">
+                    No vulnerabilities found for this risk level.
+                </div>
+
+            </div>
+
+
+            <!-- OWASP Section -->
+
+            <div class="owasp-section">
+
+                <div class="security-section-heading">
+
+                    <div>
+                        <h2>OWASP Top 10 Security Categories</h2>
+
+                        <p>
+                            Common web application security risk categories.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="owasp-grid">
+
+                    <div class="owasp-card">
+                        <span>A01</span>
+                        <h3>Broken Access Control</h3>
+                        <p>Access permission weaknesses.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A02</span>
+                        <h3>Cryptographic Failures</h3>
+                        <p>Weak or missing encryption.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A03</span>
+                        <h3>Injection</h3>
+                        <p>SQL and command injection risks.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A04</span>
+                        <h3>Insecure Design</h3>
+                        <p>Security design weaknesses.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A05</span>
+                        <h3>Security Misconfiguration</h3>
+                        <p>Unsafe application configuration.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A06</span>
+                        <h3>Vulnerable Components</h3>
+                        <p>Outdated dependencies.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A07</span>
+                        <h3>Authentication Failures</h3>
+                        <p>Weak authentication mechanisms.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A08</span>
+                        <h3>Software Integrity Failures</h3>
+                        <p>Software and update integrity risks.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A09</span>
+                        <h3>Logging Failures</h3>
+                        <p>Insufficient security monitoring.</p>
+                    </div>
+
+                    <div class="owasp-card">
+                        <span>A10</span>
+                        <h3>Server-Side Request Forgery</h3>
+                        <p>Unsafe server-side requests.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Security Details Modal -->
+
+            <div class="security-modal" id="securityModal">
+
+                <div class="security-modal-content">
+
+                    <div class="security-modal-header">
+
+                        <h2>🛡 Security Details</h2>
+
+                        <button id="closeSecurityModal">&times;</button>
+
+                    </div>
+
+                    <h3 id="securityTitle"></h3>
+
+                    <h4>Vulnerability Description</h4>
+
+                    <p id="securityDescription"></p>
+
+                    <h4>Recommended Solution</h4>
+
+                    <p id="securitySolution"></p>
+
+                    <div class="security-warning">
+                        Review and test all security recommendations
+                        before applying them.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="securityToast" class="toast"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

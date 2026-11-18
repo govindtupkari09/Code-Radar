@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b1120;
+    color: #f1f5f9;
+    font-family: 'Inter', sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: #111827;
+    border-right: 1px solid #263244;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.logo-icon {
+    background: #2563eb;
+    padding: 10px;
+    border-radius: 9px;
+    font-size: 20px;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo h2 span {
+    color: #38bdf8;
+}
+
+.menu-title {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 25px 10px 12px;
+    letter-spacing: 1px;
+}
+
+.menu-item {
+    display: block;
+    padding: 13px;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: #1e3a8a;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.user-profile {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+.avatar,
+.profile-btn {
+    background: #2563eb;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.user-profile h4 {
+    font-size: 13px;
+}
+
+.user-profile p {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Main Content */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.topbar {
+    height: 90px;
+    border-bottom: 1px solid #263244;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h3 {
+    font-size: 18px;
+}
+
+.topbar p,
+.welcome-section p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-actions input {
+    background: #111827;
+    border: 1px solid #334155;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    width: 220px;
+}
+
+.notification {
+    background: #1e293b;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Content */
+
+.content {
+    padding: 35px;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.welcome-section h1 {
+    font-size: 25px;
+}
+
+.connect-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 19px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.connect-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Statistics */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #111827;
+    border: 1px solid #263244;
+    border-radius: 12px;
+    padding: 23px;
+    transition: 0.3s;
+}
+
+.stat-card:hover,
+.repo-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+}
+
+.stat-card p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin: 18px 0 12px;
+}
+
+.small {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.positive {
+    color: #22c55e;
+    font-size: 12px;
+}
+
+.warning {
+    color: #facc15;
+    font-size: 12px;
+}
+
+.danger {
+    color: #f87171;
+    font-size: 12px;
+}
+
+/* Repositories */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 20px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+}
+
+.section-heading a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.repository-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.repo-card {
+    background: #111827;
+    border: 1px solid #263244;
+    padding: 22px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.repo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.repo-top h3 {
+    font-size: 15px;
+}
+
+.repo-card > p {
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 18px 0;
+}
+
+.status {
+    font-size: 10px;
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+.success {
+    color: #4ade80;
+    background: #14532d;
+}
+
+.warning-status {
+    color: #facc15;
+    background: #713f12;
+}
+
+.repo-details {
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* Issues Table */
+
+.table-container {
+    overflow-x: auto;
+    background: #111827;
+    border: 1px solid #263244;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #263244;
+    font-size: 12px;
+}
+
+th {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+td {
+    color: #e2e8f0;
+}
+
+.severity {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.critical {
+    color: #f87171;
+    background: #7f1d1d;
+}
+
+.high {
+    color: #fb923c;
+    background: #7c2d12;
+}
+
+.low {
+    color: #4ade80;
+    background: #14532d;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .repository-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .stats-grid,
+    .repository-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .top-actions input {
+        width: 130px;
+    }
+}
+
+/* Modal Overlay */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    background: #111827;
+    border: 1px solid #334155;
+    width: 100%;
+    max-width: 450px;
+    padding: 28px;
+    border-radius: 14px;
+    animation: modalOpen 0.3s ease;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 19px;
+}
+
+.modal-header button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-description {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 18px 0 25px;
+}
+
+#githubForm label {
+    display: block;
+    font-size: 13px;
+    margin: 18px 0 9px;
+}
+
+#githubForm input {
+    width: 100%;
+    padding: 13px;
+    background: #0b1120;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+#githubForm input:focus {
+    border-color: #3b82f6;
+}
+
+.modal-connect {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-connect:hover {
+    background: #1d4ed8;
+}
+
+/* Toast */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #1e293b;
+    color: white;
+    border: 1px solid #3b82f6;
+    padding: 15px 22px;
+    border-radius: 9px;
+    display: none;
+    z-index: 2000;
+    font-size: 13px;
+}
+
+.toast.show {
+    display: block;
+    animation: modalOpen 0.3s ease;
+}

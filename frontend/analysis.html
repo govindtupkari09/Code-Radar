@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Analysis | Code Radar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/analysis.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+   <script src="js/analysis.js" defer></script>
+   
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">⌘</span>
+            <h2>Code<span>Radar</span></h2>
+        </div>
+
+        <div class="menu">
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <a href="index.html" class="menu-item">▦ Dashboard</a>
+
+            <a href="repositories.html" class="menu-item">⌘ Repositories</a>
+
+            <a href="analysis.html" class="menu-item active">◈ Code Analysis</a>
+
+            <a href="#" class="menu-item">⚠ Issues</a>
+
+            <a href="security.html" class="menu-item">♢ Security</a>
+
+            <p class="menu-title">MANAGEMENT</p>
+
+            <a href="#" class="menu-item">♧ Developers</a>
+
+            <a href="#" class="menu-item">⚙ Settings</a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="user-profile">
+
+                <div class="avatar">GT</div>
+
+                <div>
+                    <h4>Developer</h4>
+                    <p>Free Plan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h3>Code Analysis</h3>
+                <p>Analyze your repository code quality.</p>
+            </div>
+
+            <div class="top-actions">
+
+                <select id="repoSelect">
+                    <option value="SmartDocAI">SmartDocAI</option>
+                    <option value="CarbonWise">CarbonWise</option>
+                    <option value="Movie Booking">Movie Booking</option>
+                </select>
+
+                <button class="profile-btn">GT</button>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <!-- Header -->
+
+            <div class="analysis-header">
+
+                <div>
+                    <h1>Code Quality Overview</h1>
+
+                    <p>
+                        Review bugs, vulnerabilities and coding issues.
+                    </p>
+                </div>
+
+                <button class="run-analysis-btn" id="runAnalysis">
+                    ▶ Run Analysis
+                </button>
+
+            </div>
+            <!-- GitHub Repository Analysis -->
+
+<div class="github-analysis-section">
+
+    <h2>GitHub Repository Analysis</h2>
+
+    <p>Connect your GitHub repository and analyze code using AI.</p>
+
+    <div class="github-input-group">
+
+        <input
+            type="url"
+            id="githubRepoUrl"
+            placeholder="https://github.com/username/repository"
+        >
+
+        <button id="analyzeGithubRepo">
+            🚀 Analyze Repository
+        </button>
+
+    </div>
+
+    <div id="repositoryLoading" style="display:none;">
+        <p>🤖 AI is analyzing your repository. Please wait...</p>
+    </div>
+
+    <div id="repositoryStatus"></div>
+
+    <div id="repositoryResults"></div>
+
+</div>
+
+<!-- End GitHub Repository Analysis -->
+
+
+            <!-- Quality Score -->
+
+            <div class="quality-overview">
+
+                <div class="quality-score-card">
+
+                    <p>Overall Code Quality</p>
+
+                    <div class="score-circle">
+                        <div>
+                            <h2>87</h2>
+                            <span>/100</span>
+                        </div>
+                    </div>
+
+                    <span class="quality-label">Good Quality</span>
+
+                    <p class="score-description">
+                        Your code quality is good but some issues need attention.
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-stats">
+
+                    <div class="analysis-stat-card">
+                        <span class="stat-icon bug-icon">🐞</span>
+                        <p>Total Bugs</p>
+                        <h2>12</h2>
+                        <span class="critical-text">3 Critical</span>
+                    </div>
+
+                    <div class="analysis-stat-card">
+                        <span class="stat-icon security-icon">🛡</span>
+                        <p>Vulnerabilities</p>
+                        <h2>07</h2>
+                        <span class="high-text">2 High Risk</span>
+                    </div>
+
+                    <div class="analysis-stat-card">
+                        <span class="stat-icon smell-icon">⚙</span>
+                        <p>Code Smells</p>
+                        <h2>24</h2>
+                        <span class="medium-text">Needs Improvement</span>
+                    </div>
+
+                    <div class="analysis-stat-card">
+                        <span class="stat-icon fix-icon">✓</span>
+                        <p>Resolved Issues</p>
+                        <h2>18</h2>
+                        <span class="success-text">Successfully Fixed</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Issue Section -->
+
+            <div class="issue-section">
+
+                <div class="issue-heading">
+
+                    <div>
+                        <h2>Detected Issues</h2>
+                        <p>Review identified problems in your source code.</p>
+                    </div>
+
+                    <select id="severityFilter">
+
+                        <option value="all">All Severities</option>
+                        <option value="critical">Critical</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Issue Cards -->
+
+                <div class="issues-container" id="issuesContainer">
+
+
+                    <!-- Issue 1 -->
+
+                    <div class="issue-card" data-severity="critical">
+
+                        <div class="issue-top">
+
+                            <span class="issue-type bug-type">BUG</span>
+
+                            <span class="severity-badge critical-badge">
+                                Critical
+                            </span>
+
+                        </div>
+
+                        <h3>SQL Injection Vulnerability</h3>
+
+                        <p>
+                            User input is directly used in SQL queries.
+                            This may allow attackers to execute malicious SQL.
+                        </p>
+
+                        <div class="issue-meta">
+                            <span>📁 database.py</span>
+                            <span>Line 45</span>
+                        </div>
+
+                        <button class="ai-explain-btn"
+                            data-issue="SQL Injection Vulnerability">
+                            ✨ Explain with AI
+                        </button>
+
+                    </div>
+
+
+                    <!-- Issue 2 -->
+
+                    <div class="issue-card" data-severity="high">
+
+                        <div class="issue-top">
+
+                            <span class="issue-type security-type">
+                                SECURITY
+                            </span>
+
+                            <span class="severity-badge high-badge">
+                                High
+                            </span>
+
+                        </div>
+
+                        <h3>Hardcoded API Key</h3>
+
+                        <p>
+                            Sensitive API credentials are stored directly
+                            inside the source code.
+                        </p>
+
+                        <div class="issue-meta">
+                            <span>📁 config.py</span>
+                            <span>Line 18</span>
+                        </div>
+
+                        <button class="ai-explain-btn"
+                            data-issue="Hardcoded API Key">
+                            ✨ Explain with AI
+                        </button>
+
+                    </div>
+
+
+                    <!-- Issue 3 -->
+
+                    <div class="issue-card" data-severity="medium">
+
+                        <div class="issue-top">
+
+                            <span class="issue-type smell-type">
+                                CODE SMELL
+                            </span>
+
+                            <span class="severity-badge medium-badge">
+                                Medium
+                            </span>
+
+                        </div>
+
+                        <h3>Unused Variables</h3>
+
+                        <p>
+                            Some variables are declared but never used.
+                            This reduces code readability.
+                        </p>
+
+                        <div class="issue-meta">
+                            <span>📁 app.py</span>
+                            <span>Line 32</span>
+                        </div>
+
+                        <button class="ai-explain-btn"
+                            data-issue="Unused Variables">
+                            ✨ Explain with AI
+                        </button>
+
+                    </div>
+
+
+                    <!-- Issue 4 -->
+
+                    <div class="issue-card" data-severity="low">
+
+                        <div class="issue-top">
+
+                            <span class="issue-type smell-type">
+                                CODE SMELL
+                            </span>
+
+                            <span class="severity-badge low-badge">
+                                Low
+                            </span>
+
+                        </div>
+
+                        <h3>Long Function</h3>
+
+                        <p>
+                            A function contains too many lines.
+                            Consider breaking it into smaller functions.
+                        </p>
+
+                        <div class="issue-meta">
+                            <span>📁 utils.py</span>
+                            <span>Line 78</span>
+                        </div>
+
+                        <button class="ai-explain-btn"
+                            data-issue="Long Function">
+                            ✨ Explain with AI
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="noIssues" class="no-issues">
+                    No issues found for this severity.
+                </div>
+
+            </div>
+
+
+            <!-- AI Explanation Modal -->
+
+            <div class="ai-modal" id="aiModal">
+
+                <div class="ai-modal-content">
+
+                    <div class="ai-modal-header">
+
+                        <h2>✨ AI Code Explanation</h2>
+
+                        <button id="closeAiModal">&times;</button>
+
+                    </div>
+
+                    <h3 id="selectedIssue">Issue Name</h3>
+
+                    <div class="ai-loading" id="aiLoading">
+                        Preparing AI explanation...
+                    </div>
+
+                    <div id="aiResult" class="ai-result">
+
+                        <h4>What is the problem?</h4>
+
+                        <p id="aiExplanation"></p>
+
+                        <h4>Suggested Solution</h4>
+
+                        <pre><code id="aiFix"></code></pre>
+
+                    </div>
+
+                    <div class="ai-note">
+                        AI-generated suggestions must be reviewed and tested
+                        before applying them.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="analysisToast" class="toast"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

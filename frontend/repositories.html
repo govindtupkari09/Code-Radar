@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Repositories | Code Radar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/repositories.css">
+
+    <script src="js/repositories.js" defer></script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">⌘</span>
+            <h2>Code<span>Radar</span></h2>
+        </div>
+
+        <div class="menu">
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <a href="index.html" class="menu-item">▦ Dashboard</a>
+
+            <a href="repositories.html" class="menu-item active">
+                ⌘ Repositories
+            </a>
+
+            <a href="analysis.html" class="menu-item">◈ Code Analysis</a>
+            <a href="#" class="menu-item">⚠ Issues</a>
+            <a href="security.html" class="menu-item">♢ Security</a>
+
+            <p class="menu-title">MANAGEMENT</p>
+
+            <a href="#" class="menu-item">♧ Developers</a>
+            <a href="#" class="menu-item">⚙ Settings</a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="user-profile">
+
+                <div class="avatar">GT</div>
+
+                <div>
+                    <h4>Developer</h4>
+                    <p>Free Plan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h3>Repositories</h3>
+                <p>Manage and analyze your GitHub repositories.</p>
+            </div>
+
+            <div class="top-actions">
+
+                <input
+                    type="text"
+                    id="searchRepo"
+                    placeholder="Search repositories..."
+                >
+
+                <button class="profile-btn">GT</button>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <!-- Page Header -->
+
+            <div class="repo-header">
+
+                <div>
+                    <h1>My Repositories</h1>
+
+                    <p>
+                        Connect, monitor and analyze your source code.
+                    </p>
+                </div>
+
+                <button class="connect-btn" id="connectRepo">
+                    + Connect Repository
+                </button>
+
+            </div>
+
+
+            <!-- Repository Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Total Repositories</p>
+                    <h2 id="totalRepos">03</h2>
+                    <span class="positive">Connected repositories</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Analyzed Repositories</p>
+                    <h2>02</h2>
+                    <span class="positive">Analysis completed</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending Analysis</p>
+                    <h2>01</h2>
+                    <span class="warning">Awaiting analysis</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Average Code Quality</p>
+                    <h2>88<span class="small">/100</span></h2>
+                    <span class="positive">Good performance</span>
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="repo-filters">
+
+                <div>
+                    <h2>All Repositories</h2>
+                    <p>Manage your connected repositories.</p>
+                </div>
+
+                <div class="filter-controls">
+
+                    <select id="languageFilter">
+
+                        <option value="all">All Languages</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+
+                    </select>
+
+                    <select id="statusFilter">
+
+                        <option value="all">All Status</option>
+                        <option value="analyzed">Analyzed</option>
+                        <option value="pending">Pending</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Repository Cards -->
+
+            <div class="all-repos" id="repositoryList">
+
+                <div class="repo-management-card"
+                     data-language="python"
+                     data-status="analyzed">
+
+                    <div class="repo-card-header">
+
+                        <div class="repo-icon">⌘</div>
+
+                        <span class="status success">Analyzed</span>
+
+                    </div>
+
+                    <h3>SmartDocAI</h3>
+
+                    <p>
+                        AI-powered intelligent PDF question answering system.
+                    </p>
+
+                    <div class="repo-meta">
+
+                        <span>● Python</span>
+                        <span>Branch: main</span>
+
+                    </div>
+
+                    <div class="quality-section">
+
+                        <span>Code Quality</span>
+                        <strong>92/100</strong>
+
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:92%"></div>
+                    </div>
+
+                    <div class="repo-footer">
+
+                        <span>Last commit: 2 days ago</span>
+
+                        <button class="analyze-btn">
+                            Analyze →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="repo-management-card"
+                     data-language="javascript"
+                     data-status="analyzed">
+
+                    <div class="repo-card-header">
+
+                        <div class="repo-icon">⌘</div>
+
+                        <span class="status warning-status">Warning</span>
+
+                    </div>
+
+                    <h3>CarbonWise</h3>
+
+                    <p>
+                        AI-powered carbon footprint analysis platform.
+                    </p>
+
+                    <div class="repo-meta">
+
+                        <span>● JavaScript</span>
+                        <span>Branch: main</span>
+
+                    </div>
+
+                    <div class="quality-section">
+
+                        <span>Code Quality</span>
+                        <strong>78/100</strong>
+
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:78%"></div>
+                    </div>
+
+                    <div class="repo-footer">
+
+                        <span>Last commit: 5 hours ago</span>
+
+                        <button class="analyze-btn">
+                            Analyze →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="repo-management-card"
+                     data-language="python"
+                     data-status="pending">
+
+                    <div class="repo-card-header">
+
+                        <div class="repo-icon">⌘</div>
+
+                        <span class="status pending-status">Pending</span>
+
+                    </div>
+
+                    <h3>Movie Booking</h3>
+
+                    <p>
+                        Cloud-based movie ticket booking application.
+                    </p>
+
+                    <div class="repo-meta">
+
+                        <span>● Python</span>
+                        <span>Branch: main</span>
+
+                    </div>
+
+                    <div class="quality-section">
+
+                        <span>Code Quality</span>
+                        <strong>Not analyzed</strong>
+
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:0%"></div>
+                    </div>
+
+                    <div class="repo-footer">
+
+                        <span>Last commit: 1 week ago</span>
+
+                        <button class="analyze-btn">
+                            Analyze →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="emptyMessage" class="empty-message">
+                No repositories found.
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Connect Repository Modal -->
+
+<div class="modal-overlay" id="repoModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Connect Repository</h2>
+
+            <button id="closeRepoModal">&times;</button>
+
+        </div>
+
+        <p class="modal-description">
+            Enter your GitHub repository details.
+        </p>
+
+        <form id="repoForm">
+
+            <label>Repository URL</label>
+
+            <input
+                type="url"
+                id="newRepoUrl"
+                placeholder="https://github.com/username/repository"
+                required
+            >
+
+            <label>Repository Name</label>
+
+            <input
+                type="text"
+                id="newRepoName"
+                placeholder="Repository name"
+                required
+            >
+
+            <button type="submit" class="modal-connect">
+                Add Repository
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="repoToast" class="toast"></div>
+
+</body>
+</html>

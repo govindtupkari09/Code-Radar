@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Radar | AI Code Review</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">⌘</span>
+                <h2>Code<span>Radar</span></h2>
+            </div>
+
+            <div class="menu">
+                <p class="menu-title">MAIN MENU</p>
+
+                <a href="index.html" class="menu-item active">▦ Dashboard</a>
+                <a href="repositories.html" class="menu-item">⌘ Repositories</a>
+                <a href="analysis.html" class="menu-item">◈ Code Analysis</a>
+                <a href="#" class="menu-item">⚠ Issues</a>
+                <a href="security.html" class="menu-item">♢ Security</a>
+
+                <p class="menu-title">MANAGEMENT</p>
+
+                <a href="#" class="menu-item">♧ Developers</a>
+                <a href="#" class="menu-item">⚙ Settings</a>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="user-profile">
+                    <div class="avatar">GT</div>
+                    <div>
+                        <h4>Developer</h4>
+                        <p>Free Plan</p>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="topbar">
+
+                <div>
+                    <h3>Dashboard</h3>
+                    <p>Monitor your code quality and security.</p>
+                </div>
+
+                <div class="top-actions">
+                    <input type="text" placeholder="Search repositories...">
+                    <button class="notification">♧</button>
+                    <button class="profile-btn">GT</button>
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard Content -->
+            <section class="content">
+
+                <div class="welcome-section">
+                    <div>
+                        <h1>Welcome back, Developer 👋</h1>
+                        <p>Here's what's happening with your repositories today.</p>
+                    </div>
+
+                    <button class="connect-btn" id="connectBtn">
+                        + Connect Repository
+                    </button>
+                </div>
+
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <p>Total Repositories</p>
+                        <h2 id="totalRepositories">0</h2>
+                        <span class="positive">Connected repositories</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Total Issues</p>
+                        <h2 id="totalIssues">0</h2>
+                        <span class="warning">AI reported issues</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Security Vulnerabilities</p>
+                        <h2 id="totalVulnerabilities">0</h2>
+                        <span class="danger">Requires review</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Code Quality Score</p>
+                        <h2>
+                            <span id="qualityScore">--</span>
+                            <span class="small">/100</span>
+                        </h2>
+                        <span class="positive">AI analysis overview</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Repository Section -->
+                <div class="section-heading">
+                    <h2>Recent Repositories</h2>
+                    <a href="repositories.html">View All →</a>
+                </div>
+
+                <div class="repository-grid" id="recentRepositories">
+
+                    <p id="noRepositories">
+                        No repositories analyzed yet. Connect a GitHub repository to get started.
+                    </p>
+
+                </div>
+
+
+                <!-- Issues Table -->
+                <div class="section-heading">
+                    <h2>Recent Code Issues</h2>
+                    <a href="analysis.html">View All →</a>
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Repository</th>
+                                <th>Severity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentIssues">
+
+                            <tr>
+                                <td colspan="4">
+                                    No analysis results available yet.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- GitHub Connect Modal -->
+    <div class="modal-overlay" id="githubModal">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+                <h2>Connect GitHub Repository</h2>
+                <button id="closeModal">&times;</button>
+            </div>
+
+            <p class="modal-description">
+                Connect your GitHub repository to start AI-powered code analysis.
+            </p>
+
+            <form id="githubForm">
+
+                <label>GitHub Repository URL</label>
+
+                <input
+                    type="url"
+                    id="repoUrl"
+                    placeholder="https://github.com/username/repository"
+                    required
+                >
+
+                <label>Repository Name</label>
+
+                <input
+                    type="text"
+                    id="repoName"
+                    placeholder="Enter repository name"
+                    required
+                >
+
+                <button type="submit" class="modal-connect">
+                    Connect Repository
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+
+</body>
+</html>

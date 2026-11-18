@@ -1,0 +1,184 @@
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.repo-header h1 {
+    font-size: 25px;
+}
+
+.repo-header p,
+.repo-filters p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.repo-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 22px;
+}
+
+.repo-filters h2 {
+    font-size: 19px;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.filter-controls select {
+    background: #111827;
+    color: white;
+    border: 1px solid #334155;
+    padding: 11px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.all-repos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.repo-management-card {
+    background: #111827;
+    border: 1px solid #263244;
+    border-radius: 12px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.repo-management-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+}
+
+.repo-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.repo-icon {
+    background: #1e3a8a;
+    color: #60a5fa;
+    padding: 12px;
+    border-radius: 9px;
+    font-size: 20px;
+}
+
+.repo-management-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.repo-management-card > p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.repo-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #263244;
+}
+
+.quality-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 12px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.quality-section strong {
+    color: white;
+}
+
+.progress {
+    height: 7px;
+    background: #263244;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 10px;
+}
+
+.repo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.repo-footer span {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.analyze-btn {
+    background: #1e3a8a;
+    color: #60a5fa;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.analyze-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.pending-status {
+    color: #cbd5e1;
+    background: #334155;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+}
+
+@media(max-width: 1000px) {
+    .all-repos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+    .repo-header,
+    .repo-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .filter-controls {
+        flex-wrap: wrap;
+    }
+
+    .repo-footer {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
